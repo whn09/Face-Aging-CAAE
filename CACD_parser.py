@@ -49,5 +49,5 @@ def load_celebrity2000_meta(filename):
 
 
 if __name__ == '__main__':
-    # load_celebrity2000_meta(CACD_DIR+'celebrity2000_meta.mat')
+    load_celebrity2000_meta(CACD_DIR+'celebrity2000_meta.mat')
     load_celebrity2000_meta(CACD_DIR+'celebrity2000.mat')

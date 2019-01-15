@@ -301,7 +301,10 @@ class FaceAging(object):
             else:
                 label = 9
             sample_label_age[i, label] = self.image_value_range[-1]
-            gender = int(str(sample_files[i]).split('/')[-1].split('_')[1])
+            try:
+                gender = int(str(sample_files[i]).split('/')[-1].split('_')[1])
+            except:
+                gender = 0
             sample_label_gender[i, gender] = self.image_value_range[-1]
 
         # ******************************************* training *******************************************************
@@ -375,7 +378,10 @@ class FaceAging(object):
                     else:
                         label = 9
                     batch_label_age[i, label] = self.image_value_range[-1]
-                    gender = int(str(batch_files[i]).split('/')[-1].split('_')[1])
+                    try:
+                        gender = int(str(batch_files[i]).split('/')[-1].split('_')[1])
+                    except:
+                        gender = 0
                     batch_label_gender[i, gender] = self.image_value_range[-1]
 
                 # prior distribution on the prior of z
