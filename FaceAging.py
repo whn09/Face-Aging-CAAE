@@ -305,6 +305,8 @@ class FaceAging(object):
                 gender = int(str(sample_files[i]).split('/')[-1].split('_')[1])
             except:
                 gender = 0
+            if gender > 1:
+                gender = 0
             sample_label_gender[i, gender] = self.image_value_range[-1]
 
         # ******************************************* training *******************************************************
@@ -381,6 +383,8 @@ class FaceAging(object):
                     try:
                         gender = int(str(batch_files[i]).split('/')[-1].split('_')[1])
                     except:
+                        gender = 0
+                    if gender > 1:
                         gender = 0
                     batch_label_gender[i, gender] = self.image_value_range[-1]
 
